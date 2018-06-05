@@ -1,2 +1,5 @@
 /docs/
 .thumb.png
+/node_modules/
+/dist/
+/old-css/
