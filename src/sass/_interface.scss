@@ -1,0 +1,44 @@
+.wrapper {
+  background-color: $off-white;
+  @include clearfix;
+  height: 100%;
+}
+
+/* Nav & logo */
+nav {
+  background-color: $bale-vred;
+  @include clearfix;
+  text-align: center
+}
+
+nav > h1 > a { // title && logo purpose
+  color: $outer-space;
+  font-family: $title;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+
+#breadcrumb {
+  list-style: none;
+  li {
+    display: inline-block;
+
+    + li:before {
+      content: "/\00a0";
+      padding: 0 5px;
+    }
+  }
+}
+
+
+/* Map area*/
+#maincontent {
+  background-color: $bale-blue;
+}
+
+#map {
+  background-color: $platinum;
+  height: 25rem;
+  width: 100%;
+}

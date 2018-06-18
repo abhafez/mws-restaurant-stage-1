@@ -1,27 +1,17 @@
 // Load Fonts
-// @import url();
+@import url('https://fonts.googleapis.com/css?family=Assistant|Handlee:400,700');
 
+$brick-red:   #C33C54;
+$debian-red:  #CF1259;
+$bale-vred:   #DD7596;
 $darkblue:    #022933;
-$offwhite:    #EEE8D6;
-$yellow:      #FFBA00;
-$blue:        #0076A3;
-$green:       #548C27;
-$orange:      #F39856;
-$red:         #D14348;
-$purple:      #6D73C2;
-
-
-$color-main: $darkblue;
-$color-backgrounds: $offwhite;
-$color-headlines: $red;
+$outer-space: #404E5C;
+$black-coral: #4F6272;
+$teal-blue:   #37718E;
+$bale-blue:   #B7C3F3;
+$platinum:    #DEEDE4;
+$off-white:   #EEE8D6;
 
 // fonts
-$font-main: Gotham, Helvetica, sans-serif;
-$font-highlight: 'Mono Sans', Helvetica, sans-serif;
-$font-monospace: Monaco, monospace, sans-serif;
-
-//breakpoints
-
-$large:		1200px;
-$medium:	760px;
-$small:		450px;
+$main-font: 'Assistant', sans-serif;
+$title: 'Handlee', cursive;

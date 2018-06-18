@@ -2,45 +2,33 @@
 <html>
 
 <head>
-  <!-- <link rel="stylesheet" src="//normalize-css.googlecode.com/svn/trunk/normalize.css" /> -->
-  <link rel="stylesheet" href="css/styles.css" type="text/css">
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="css/styles.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Restaurant Info</title>
 </head>
 
 <body class="inside">
-  <!-- Beginning header -->
   <div class="wrapper">
     <header class="header">
-      <!-- Beginning nav -->
       <nav>
         <h1>
           <a href="/">Restaurant Reviews</a>
         </h1>
       </nav>
-      <!-- End nav -->
-      <!-- Beginning breadcrumb -->
       <ul id="breadcrumb">
         <li>
           <a href="/">Home</a>
         </li>
       </ul>
-      <!-- End breadcrumb -->
     </header>
-    <!-- End header -->
 
-    <!-- Beginning main -->
       <section id="map-container" class="sidebar">
         <div id="map"></div>
       </section>
     <main id="maincontent" class="content">
-      <!-- Beginning map -->
-      <!-- End map -->
-      <!-- Beginning restaurant -->
-      <!-- end restaurant -->
-      <!-- Beginning reviews -->
-      <!-- End reviews -->
     </main>
+
     <section id="reviews-container" class="output">
       <ul id="reviews-list"></ul>
     </section>
@@ -51,23 +39,17 @@
       <p id="restaurant-address"></p>
       <table id="restaurant-hours"></table>
     </section>
-    <!-- End main -->
 
-    <!-- Beginning footer -->
-    <footer id="footer" class="footer">
-      Copyright (c) 2017
-      <a href="/">
-        <strong>Restaurant Reviews</strong>
-      </a> All Rights Reserved.
+    <footer class="copyright" id="footer">
+      Copyright (c) 2018 &nbsp;
+        <a href="/">
+          <strong>Restaurant Reviews</strong>
+        </a> &nbsp; All Rights Reserved.
     </footer>
-    <!-- End footer -->
   </div>
 
-  <!-- Database helpers -->
   <script type="text/javascript" src="js/dbhelper.js"></script>
-  <!-- Main javascript file -->
   <script type="text/javascript" src="js/restaurant_info.js"></script>
-  <!-- Google Maps -->
   <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA_tKbW6A5pQ-eupxI56myUnHLqYCzOjKo&libraries=places&callback=initMap"></script>
 
 </body>

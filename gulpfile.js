@@ -37,7 +37,7 @@ gulp.task('scripts-dist', function () {
 });
 
 gulp.task('copy-html', function () {
-  gulp.src('./index.html')
+  gulp.src('src/index.html')
     .pipe(gulp.dest('./dist'));
 });
 
@@ -48,9 +48,7 @@ gulp.task('copy-images', function () {
 
 gulp.task('styles', function () {
   gulp.src('src/sass/**/*.scss')
-    .pipe(sass({
-      outputStyle: 'compressed'
-    }).on('error', sass.logError))
+    .pipe(sass().on('error', sass.logError))
     .pipe(autoprefixer({
       browsers: ['last 2 versions']
     }))
@@ -58,3 +56,5 @@ gulp.task('styles', function () {
     .pipe(gulp.dest('dist/css'))
     .pipe(browserSync.stream());
 });
+
+// outputStyle: 'compressed'

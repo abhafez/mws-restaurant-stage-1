@@ -4,7 +4,9 @@ class DBHelper {
   // Database URL.
   // Change this to restaurants.json file location on your server.
   static get DATABASE_URL() {
-    const port = 5500; // I've used 5500 ((vscode live server port))
+    // I've used 5500 ((vscode live server port)).
+    // or 3000 for browserSync by gulp.
+    const port = 3000;
     return `http://localhost:${port}/data/restaurants.json`;
   }
 
