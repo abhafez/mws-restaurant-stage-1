@@ -1,44 +1,67 @@
 .wrapper {
-  background-color: $off-white;
   @include clearfix;
   height: 100%;
 }
 
 /* Nav & logo */
+
 nav {
-  background-color: $bale-vred;
+  background-color: $english-lavender;
   @include clearfix;
-  text-align: center
-}
+  text-align: left;
+  .logo {
+    width: 3.5em;
+    float: left;
+    margin-top: 5px;
+  }
 
-nav > h1 > a { // title && logo purpose
-  color: $outer-space;
-  font-family: $title;
-  text-decoration: none;
-  font-weight: 700;
+  a {
+    font-size: 1.5em;
+    color: $dark;
+    font-family: $title;
+    text-decoration: none;
+    font-weight: 700;
+    margin-left: 5px;
+  }
 }
-
 
 #breadcrumb {
   list-style: none;
   li {
     display: inline-block;
-
-    + li:before {
+    +li:before {
       content: "/\00a0";
       padding: 0 5px;
     }
   }
 }
 
-
 /* Map area*/
+
 #maincontent {
-  background-color: $bale-blue;
+  background-color: $desert-sand;
 }
 
 #map {
-  background-color: $platinum;
+  background-color: $dark;
   height: 25rem;
   width: 100%;
+}
+
+.filter-options {
+  font-family: $main-font;
+  @include clearfix;
+  position: static;
+  text-align: right;
+
+  h2 {
+    display: inline;
+    margin: 0.1em;
+  }
+
+  select {
+    margin-bottom: 20px;
+    border: 2px groove $darker;
+    display: inline-flex;
+  }
 }

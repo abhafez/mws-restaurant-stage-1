@@ -1,10 +1,11 @@
 body {
   margin: 0;
+  background-color: $desert-sand;
   font-family: $main-font;
 }
 
 img {
-  max-width: 100%;
+  max-width: 80%;
 }
 
 ul {
@@ -14,19 +15,18 @@ ul {
 }
 
 footer {
+  background-color: $dark;
+  color: $desert-sand;
   position: relative;
-  bottom: 0;
   width: 100%;
   height: 5vh;
-  background-color: $darkblue;
-  color: $off-white;
   text-align: center;
   padding-top: 2em;
   padding-bottom: 1.35em;
   clear: both;
 
   a {
-    color: $bale-vred;
+    color: $desert-sand;
     font-style: none;
     text-decoration: none;
 
