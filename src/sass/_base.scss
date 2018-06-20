@@ -5,10 +5,12 @@ body {
 }
 
 img {
-  max-width: 80%;
+  max-width: 100%;
 }
 
 ul {
+  padding: 1em;
+  @include clearfix;
   li {
     list-style-type: none;
   }

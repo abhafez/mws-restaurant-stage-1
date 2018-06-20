@@ -9,45 +9,49 @@
 </head>
 
 <body>
-  <div class="wrapper">
-    <header class="header">
-      <nav>
-        <h1>
-          <a href="/">Restaurant Reviews</a>
-        </h1>
-      </nav>
-    </header>
-
-    <main class="content" id="maincontent">
-      <section id="map-container">
-        <div id="map"></div>
-      </section>
-    </main>
+  <div class="container">
+    <div class="">
+      <header class="header">
+        <nav>
+          <div class="logo-slogan">
+            <h1>
+              <img class="logo" src="img/rest.svg" alt="Restaurant Reviews">
+              <a href="/">Restaurant Reviews</a>
+            </h1>
+          </div>
+          <div class="filter-options">
+            <h2>Filter Results</h2>
+            <select id="neighborhoods-select" name="neighborhoods" onchange="updateRestaurants()">
+              <option value="all">All Neighborhoods</option>
+            </select>
+            <select id="cuisines-select" name="cuisines" onchange="updateRestaurants()">
+              <option value="all">All Cuisines</option>
+            </select>
+          </div>
+        </nav>
+      </header>
+      <main class="content" id="maincontent">
+        <section id="map-container">
+          <div id="map"></div>
+        </section>
+      </main>
+    </div>
 
     <section class="output">
       <ul id="restaurants-list"></ul>
     </section>
 
-    <div class="filter-options">
-      <h2>Filter Results</h2>
-      <select id="neighborhoods-select" name="neighborhoods" onchange="updateRestaurants()">
-        <option value="all">All Neighborhoods</option>
-      </select>
-      <select id="cuisines-select" name="cuisines" onchange="updateRestaurants()">
-        <option value="all">All Cuisines</option>
-      </select>
-    </div>
 
     <script src="js/dbhelper.js" type="application/javascript" charset="utf-8"></script>
     <script src="js/main.js" type="application/javascript" charset="utf-8"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_MAPS_API_KEY&libraries=places&callback=initMap" async defer></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCA1Ssnu1-w0jQV3YceDhfcxMuTTr9oSlQ&libraries=places&callback=initMap" async defer></script>
 
 
     <footer class="copyright" id="footer">
       Copyright (c) 2018 &nbsp;
-        <a href="/">
-          <strong>Restaurant Reviews</strong>
-        </a> &nbsp; All Rights Reserved.
+      <a href="/">
+        <strong>Restaurant Reviews</strong>
+      </a> &nbsp; All Rights Reserved.
     </footer>
   </div>
 

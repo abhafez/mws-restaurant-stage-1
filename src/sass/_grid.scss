@@ -1,0 +1,24 @@
+// .output {
+//   display: grid;
+//   grid-template-columns: repeat(2, 1fr);
+//   grid-gap: 10px;
+//   grid-auto-rows: minmax(100px, auto);
+//   justify-content: center;
+// }
+
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 10px;
+  // grid-auto-rows: minmax(100px, auto);
+  // justify-content: center;
+  // align-items: stretch;
+  // @include clearfix;
+}
+
+.list-item {
+  grid-column: 1 / 6;
+  display: inline-grid;
+  margin: 0.7em;
+  width: 350px;
+}
