@@ -148,8 +148,14 @@ createRestaurantHTML = (restaurant) => {
   neighborhood.innerHTML = restaurant.neighborhood;
   li.append(neighborhood);
 
+  const locationIcon = "fas fa-map-marker-alt";
+  const addressLogo = document.createElement('i');
+
+  addressLogo.classList = locationIcon;
+
   const address = document.createElement('p');
-  address.innerHTML = restaurant.address;
+  address.innerHTML = '   ' + restaurant.address;
+  address.prepend(addressLogo);
   li.append(address);
 
   const more = document.createElement('a');
