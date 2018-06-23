@@ -7,9 +7,6 @@
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   grid-gap: 10px; // grid-auto-rows: minmax(100px, auto);
-  // justify-content: center;
-  // align-items: stretch;
-  // @include clearfix;
 }
 
 .list-item {
@@ -44,13 +41,11 @@
     margin: 0.2em;
     min-height: 388px;
   }
-  
   @media screen and (min-width: 1024px) {
     width: 240px;
     margin: 0.2em;
     min-height: 388px;
   }
-
   p {
     margin-top: 0px;
     margin-bottom: 15px;
@@ -82,4 +77,27 @@
     color: $dark;
     background-color: $english-lavender;
   }
+}
+
+.template {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-auto-columns: minmax(100px, auto);
+  grid-template-areas: "rc mp" "ft ft";
+}
+
+.map {
+  grid-area: mp;
+}
+
+.review-container {
+  grid-area: rc;
+}
+
+.template #map-container {
+  height: 800px;
+}
+
+.template #map {
+  height: 100%;
 }

@@ -5,55 +5,56 @@
   <meta charset="utf-8">
   <link rel="stylesheet" href="css/styles.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt"
+    crossorigin="anonymous">
   <title>Restaurant Info</title>
 </head>
 
 <body class="inside">
-  <div class="container">
-    <header class="header">
-      <nav>
-        <h1>
-          <a href="/">Restaurant Reviews</a>
-        </h1>
-      </nav>
-      <ul id="breadcrumb">
-        <li>
-          <a href="/">Home</a>
-        </li>
-      </ul>
-    </header>
-
+  <header class="header">
+    <nav>
+      <h1>
+        <i class="fas fa-utensils"></i>
+        <a href="/">Restaurant Reviews</a>
+      </h1>
+    </nav>
+  </header>
+  <div class="template">
+    <div class="map">
       <section id="map-container" class="sidebar">
         <div id="map"></div>
       </section>
-    <main id="maincontent" class="content">
-    </main>
+    </div>
 
-    <div class="wrapper">
+    <main id="maincontent" class="content">
       <section id="reviews-container" class="output">
+    <ul id="breadcrumb">
+      <li>
+        <a href="/">Home</a>
+      </li>
+    </ul>
         <ul id="reviews-list"></ul>
       </section>
-    </div>
-    <section id="restaurant-container" class="sidebar">
-      <h1 id="restaurant-name"></h1>
-      <img id="restaurant-img">
-      <p id="restaurant-cuisine"></p>
-      <p id="restaurant-address"></p>
-      <table id="restaurant-hours"></table>
-    </section>
+      <section id="restaurant-container" class="sidebar">
+        <h1 id="restaurant-name"></h1>
+        <img id="restaurant-img">
+        <p id="restaurant-cuisine"></p>
+        <p id="restaurant-address"></p>
+        <table id="restaurant-hours"></table>
+      </section>
+    </main>
 
+  </div>
     <footer class="copyright" id="footer">
       Copyright (c) 2018 &nbsp;
-        <a href="/">
-          <strong>Restaurant Reviews</strong>
-        </a> &nbsp; All Rights Reserved.
+      <a href="/">
+        <strong>Restaurant Reviews</strong>
+      </a> &nbsp; All Rights Reserved.
     </footer>
-  </div>
 
   <script type="text/javascript" src="js/dbhelper.js"></script>
   <script type="text/javascript" src="js/restaurant_info.js"></script>
-  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA_tKbW6A5pQ-eupxI56myUnHLqYCzOjKo&libraries=places&callback=initMap"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCA1Ssnu1-w0jQV3YceDhfcxMuTTr9oSlQ&libraries=places&callback=initMap" async defer></script>
 
 </body>
 
