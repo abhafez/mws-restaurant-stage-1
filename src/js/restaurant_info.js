@@ -45,9 +45,14 @@ fetchRestaurantFromURL = (callback) => {
 fillRestaurantHTML = (restaurant = self.restaurant) => {
   const name = document.getElementById('restaurant-name');
   name.innerHTML = restaurant.name;
+  
+  const locationIcon = "fas fa-map-marker-alt";
+  const addressLogo = document.createElement('i');
+  addressLogo.classList = locationIcon;
 
   const address = document.getElementById('restaurant-address');
   address.innerHTML = restaurant.address;
+  
 
   const image = document.getElementById('restaurant-img');
   image.className = 'restaurant-img';
