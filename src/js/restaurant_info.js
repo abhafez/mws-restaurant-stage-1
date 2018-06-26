@@ -96,8 +96,10 @@ fillRestaurantHoursHTML = (operatingHours = self.restaurant.operating_hours) => 
 fillReviewsHTML = (reviews = self.restaurant.reviews) => {
   const container = document.getElementById('reviews-container');
   const title = document.createElement('h2');
+  const titleDiv = document.createElement('div');
+  titleDiv.appendChild(title);
   title.innerHTML = 'Reviews';
-  container.appendChild(title);
+  container.appendChild(titleDiv);
 
   if (!reviews) {
     const noReviews = document.createElement('p');
@@ -105,37 +107,51 @@ fillReviewsHTML = (reviews = self.restaurant.reviews) => {
     container.appendChild(noReviews);
     return;
   }
+  const divUOL = document.createElement('div');
+  divUOL.setAttribute('id', 'reviews-cards');
   const ul = document.getElementById('reviews-list');
   reviews.forEach(review => {
-    ul.appendChild(createReviewHTML(review));
+    const reviewDiv = document.createElement('div');
+    reviewDiv.classList = "review";
+    reviewDiv.appendChild(createReviewHTML(review));
+    ul.appendChild(reviewDiv);
   });
-  container.appendChild(ul);
+  divUOL.appendChild(ul);
+  container.appendChild(divUOL);
 };
 
 // Create review HTML and add it to the webpage.
 createReviewHTML = (review) => {
   const li = document.createElement('li');
   const name = document.createElement('p');
+  const nameDiv = document.createElement('div');
   name.innerHTML = review.name;
-  li.setAttribute('id', 'review');
-  name.className = 'reviewer';
-  li.appendChild(name);
+  li.setAttribute('class', 'review');
+  nameDiv.appendChild(name);
+  nameDiv.className = 'reviewer';
+  li.appendChild(nameDiv);
 
   const date = document.createElement('p');
+  const dateDiv = document.createElement('div');
+  dateDiv.className = 'date';
+  dateDiv.appendChild(date);
   date.innerHTML = review.date;
-  date.className = 'date';
-  li.appendChild(date);
+  li.appendChild(dateDiv);
 
   const rating = document.createElement('p');
   rating.innerHTML = `Rating: ${review.rating}`;
-  rating.className = 'rate';
+  const ratingDiv = document.createElement('div');
+  ratingDiv.className = 'rate';
+  ratingDiv.appendChild(rating);
   rating.setAttribute('label-aria', 'Rating');
-  li.appendChild(rating);
+  li.appendChild(ratingDiv);
 
   const comments = document.createElement('p');
   comments.innerHTML = review.comments;
-  comments.className = 'review-text';
-  li.appendChild(comments);
+  const commentsDiv = document.createElement('div');
+  commentsDiv.className = 'review-text';
+  commentsDiv.appendChild(comments);
+  li.appendChild(commentsDiv);
 
   return li;
 };

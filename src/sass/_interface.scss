@@ -110,9 +110,46 @@ ul#breadcrumb {
   background-color: $english-lavender;
   select {
     max-width: 140px;
-    border-radius: 20px;
+    border-radius: 5px;
     margin: 20px 10px;
-    border: 2px groove $darker;
+    border: 2px currentColor;
     display: inline-flex;
+  }
+}
+
+#reviews-list {
+
+  margin-left: 10px;
+
+  p {
+    margin: 0;
+  }
+
+  li {
+    text-align: left;
+    background-color: $bluish;
+  }
+
+  #review {
+    display: grid;
+  }
+
+  .reviewer {
+    background-color: $dark;
+    float: left;
+  }
+
+  .date {
+    background-color: $desert-sand;
+    float: right;
+  }
+
+  .rate {
+    background-color: $desert-sand-plus;
+    display: ;
+  }
+
+  .review-text {
+    background-color: $english-lavender;
   }
 }
