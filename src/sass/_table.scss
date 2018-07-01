@@ -7,3 +7,25 @@ tr:nth-child(odd) {
   background-color: $desert-sand-plus;
   font-weight: bold;
 }
+
+@media screen and (min-width: 768px) {
+  table {
+    font-size: 1.5em;
+  }
+
+  #restaurant-cuisine {
+    font-size: 2em;
+  }
+
+  h1#restaurant-name {
+    font-size: 3em;
+  }
+}
+
+.fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  width: 100%;
+}

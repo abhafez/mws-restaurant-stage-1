@@ -90,8 +90,14 @@ ul#breadcrumb {
   background-color: $dark;
   height: 25rem;
   width: 100%; // height: 100%;
+  margin-top: 9em;
 }
 
+#maincontent {
+  #map {
+    margin-top: 0em;
+  }
+}
 .filter-options {
   font-family: $main-font;
   color: $dark;
@@ -187,16 +193,10 @@ ul#breadcrumb {
   #reviews-list {
     .review {
       width: 340px;
-      margin: 1em 0em 1em 0em;
-      line-height: 2em;
     }
     .date {
       font-size: 0.85em;
     }
-  }
-  ul#reviews-list {
-    margin: 0;
-    padding: 0;
   }
 }
 
@@ -207,13 +207,6 @@ ul#breadcrumb {
       margin: 1em 0em 1em 0em;
       line-height: 2em;
     }
-    .date {
-      font-size: 0.85em;
-    }
-  }
-  ul#reviews-list {
-    margin: 0;
-    padding: 0;
   }
 }
 
@@ -228,21 +221,84 @@ ul#breadcrumb {
   }
 }
 
-@media screen and (min-width: 640px) {}
 
-@media screen and (min-width: 768px) {}
-
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 768px) {
   .output {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
   }
+  #restaurant-cards {
+    grid-column: 1/2;
+  }
   #review-list {
-    grid-column: 2/2;
-    display: grid;
-    grid-template-rows: repeat(1, 1fr);
+    grid-column: 1/2;
+    margin: 2em;
+    .review {
+      margin: 2em;
+    }
+  }
+}
+
+@media screen and (min-width: 1020px) {
+  #reviews-list {
+    .review {
+      width: 400px;
+    }
   }
   #restaurant-container {
-    grid-column: 1/2;
+    figure {
+      width: 400px;
+    }
+    #restaurant-cuisine {
+      width: 400px;
+    }
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  #reviews-list {
+    .review {
+      width: 500px;
+    }
+  }
+  #restaurant-container {
+    figure {
+      width: 500px;
+    }
+    #restaurant-cuisine {
+      width: 500px;
+    }
+  }
+}
+
+@media screen and (min-width: 1573px) {
+  #reviews-list {
+    .review {
+      width: 600px;
+    }
+  }
+  #restaurant-container {
+    figure {
+      width: 600px;
+    }
+    #restaurant-cuisine {
+      width: 600px;
+    }
+  }
+}
+
+@media screen and (min-width: 1700px) {
+  #reviews-list {
+    .review {
+      width: 700px;
+    }
+  }
+  #restaurant-container {
+    figure {
+      width: 700px;
+    }
+    #restaurant-cuisine {
+      width: 700px;
+    }
   }
 }
