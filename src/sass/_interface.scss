@@ -65,33 +65,25 @@ ul#breadcrumb {
   #restaurant-name {
     color: $english-lavender;
   }
-
   #restaurant-cuisine {
     background-color: $dark;
     color: $desert-sand;
     margin: 0 auto;
   }
-
   img {
     width: 100%;
     margin: 0;
     padding: 0;
   }
-
   @media screen and (min-width: 320px) {
     #restaurant-name {
       font-size: 2em;
     }
-    #restaurant-cuisine, figure {
+    #restaurant-cuisine,
+    figure {
       width: $small;
     }
   }
-  @media screen and (min-width: 360px) {}
-  @media screen and (min-width: 375px) {}
-  @media screen and (min-width: 411px) {}
-  @media screen and (min-width: 640px) {}
-  @media screen and (min-width: 768px) {}
-  @media screen and (min-width: 1024px) {}
 }
 
 #map {
@@ -118,38 +110,139 @@ ul#breadcrumb {
 }
 
 #reviews-list {
-
   margin-left: 10px;
-
   p {
     margin: 0;
   }
-
   li {
-    text-align: left;
-    background-color: $bluish;
+    text-align: left; // background-color: $bluish;
   }
-
-  #review {
+  .review {
+    border: 0px solid $darker;
+    border-top-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    width: 600px;
+    background-color: whitesmoke;
+    margin: 1em;
+    display: inline-block;
+  }
+  .name-date {
+    // @include clearfix;
+    border-top-left-radius: 10px;
+    background-color: $dark;
     display: grid;
+    grid-template-columns: repeat(2, 1fr)
   }
-
   .reviewer {
     background-color: $dark;
-    float: left;
+    border-top-left-radius: 10px;
+    color: $desert-sand;
+    padding: 30px;
+    font-weight: bold;
+    font-size: 2em; // float: left;
   }
-
   .date {
-    background-color: $desert-sand;
-    float: right;
+    background-color: $dark;
+    color: $desert-sand;
+    padding: 2.5em;
+    font-weight: bold;
+    font-size: 1em;
   }
-
   .rate {
-    background-color: $desert-sand-plus;
-    display: ;
+    background-color: $rating;
+    width: 5em;
+    padding: 0.5em;
+    margin: 1em;
+    border-radius: 30px;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: bold;
+    color: white;
   }
-
   .review-text {
-    background-color: $english-lavender;
+    text-align: justify;
+    margin: 1em;
+    font-size: 1.25em;
+  }
+}
+
+@media screen and (min-width: 320px) {
+  #reviews-list {
+    .review {
+      width: 310px;
+      margin: 1em 0em 1em 0em;
+      line-height: 2em;
+    }
+    .date {
+      font-size: 0.80em;
+    }
+  }
+  ul#reviews-list {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+@media screen and (min-width: 360px) {
+  #reviews-list {
+    .review {
+      width: 340px;
+      margin: 1em 0em 1em 0em;
+      line-height: 2em;
+    }
+    .date {
+      font-size: 0.85em;
+    }
+  }
+  ul#reviews-list {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+@media screen and (min-width: 375px) {
+  #reviews-list {
+    .review {
+      width: 360px;
+      margin: 1em 0em 1em 0em;
+      line-height: 2em;
+    }
+    .date {
+      font-size: 0.85em;
+    }
+  }
+  ul#reviews-list {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+@media screen and (min-width: 411px) {
+  #reviews-list {
+    .review {
+      width: 390px;
+    }
+    .date {
+      font-size: 1em;
+    }
+  }
+}
+
+@media screen and (min-width: 640px) {}
+
+@media screen and (min-width: 768px) {}
+
+@media screen and (min-width: 1024px) {
+  .output {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  #review-list {
+    grid-column: 2/2;
+    display: grid;
+    grid-template-rows: repeat(1, 1fr);
+  }
+  #restaurant-container {
+    grid-column: 1/2;
   }
 }

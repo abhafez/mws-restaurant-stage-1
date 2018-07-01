@@ -17,7 +17,6 @@ window.initMap = () => {
     }
   });
 };
-
 // Get current restaurant from page URL.
 fetchRestaurantFromURL = (callback) => {
   if (self.restaurant) { // restaurant already fetched!
@@ -45,15 +44,15 @@ fetchRestaurantFromURL = (callback) => {
 fillRestaurantHTML = (restaurant = self.restaurant) => {
   const name = document.getElementById('restaurant-name');
   name.innerHTML = restaurant.name;
-  
-  const locationIcon = "fas fa-map-marker-alt";
+
+  const locationIcon = 'fas fa-map-marker-alt';
   const addressLogo = document.createElement('i');
   addressLogo.classList = locationIcon;
 
   const address = document.getElementById('restaurant-address');
   address.setAttribute('aria-label', 'Adress');
   address.innerHTML = restaurant.address;
-  
+
 
   const image = document.getElementById('restaurant-img');
   image.className = 'restaurant-img';
@@ -95,11 +94,11 @@ fillRestaurantHoursHTML = (operatingHours = self.restaurant.operating_hours) => 
 // Create all reviews HTML and add them to the webpage.
 fillReviewsHTML = (reviews = self.restaurant.reviews) => {
   const container = document.getElementById('reviews-container');
-  const title = document.createElement('h2');
-  const titleDiv = document.createElement('div');
-  titleDiv.appendChild(title);
-  title.innerHTML = 'Reviews';
-  container.appendChild(titleDiv);
+  // const title = document.createElement('h2');
+  // const titleDiv = document.createElement('div');
+  // titleDiv.appendChild(title);
+  // title.innerHTML = 'Reviews';
+  // container.appendChild(titleDiv);
 
   if (!reviews) {
     const noReviews = document.createElement('p');
@@ -112,7 +111,7 @@ fillReviewsHTML = (reviews = self.restaurant.reviews) => {
   const ul = document.getElementById('reviews-list');
   reviews.forEach(review => {
     const reviewDiv = document.createElement('div');
-    reviewDiv.classList = "review";
+    reviewDiv.classList = 'review';
     reviewDiv.appendChild(createReviewHTML(review));
     ul.appendChild(reviewDiv);
   });
@@ -125,18 +124,24 @@ createReviewHTML = (review) => {
   const li = document.createElement('li');
   const name = document.createElement('p');
   const nameDiv = document.createElement('div');
+  const reviewHeadDiv = document.createElement('div');
+
+
   name.innerHTML = review.name;
-  li.setAttribute('class', 'review');
+  li.setAttribute('class', 'review-item');
   nameDiv.appendChild(name);
   nameDiv.className = 'reviewer';
-  li.appendChild(nameDiv);
+  reviewHeadDiv.className = 'name-date';
+  reviewHeadDiv.appendChild(nameDiv);
+  // li.appendChild(reviewHeadDiv);
 
   const date = document.createElement('p');
   const dateDiv = document.createElement('div');
   dateDiv.className = 'date';
   dateDiv.appendChild(date);
+  reviewHeadDiv.appendChild(dateDiv);
   date.innerHTML = review.date;
-  li.appendChild(dateDiv);
+  li.appendChild(reviewHeadDiv);
 
   const rating = document.createElement('p');
   rating.innerHTML = `Rating: ${review.rating}`;
