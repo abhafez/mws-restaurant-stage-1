@@ -38,7 +38,7 @@ fillNeighborhoodsHTML = (neighborhoods = self.neighborhoods) => {
 /**
  * Fetch all cuisines and set their HTML.
  */
-fetchCuisines = () => {
+fetchCuisines = () => {3
   DBHelper.fetchCuisines((error, cuisines) => {
     if (error) { // Got an error!
       console.error(error);
@@ -136,11 +136,15 @@ createRestaurantHTML = (restaurant) => {
   const div = document.createElement('div');
 
   const image = document.createElement('img');
+  image.setAttribute('alt', `${restaurant.name} restaurant`);
+  image.setAttribute('role', 'img');
   image.className = 'restaurant-img';
   image.src = DBHelper.imageUrlForRestaurant(restaurant);
   li.append(image);
 
   const name = document.createElement('h1');
+  name.setAttribute('role', 'heading');
+  name.setAttribute('tabindex', '0');
   name.innerHTML = restaurant.name;
   li.append(name);
 
@@ -160,10 +164,12 @@ createRestaurantHTML = (restaurant) => {
 
   const more = document.createElement('a');
   more.innerHTML = 'View Details';
+  more.setAttribute('role', 'link');
   more.href = DBHelper.urlForRestaurant(restaurant);
   li.append(more);
 
   div.classList = ["list-item"];
+  li.setAttribute('role', 'listitem')
   div.append(li);
 
   return div;
@@ -182,3 +188,14 @@ addMarkersToMap = (restaurants = self.restaurants) => {
     self.markers.push(marker);
   });
 };
+
+// Makes map component silent on first tab.
+setTimeout(() => {
+  var googleMapDiv = document.getElementsByClassName('gm-style');
+  for (let i = 0; i < googleMapDiv.length; i++) {
+    let mapCompnents = googleMapDiv[0].childNodes;
+    for (let i = 0; i < mapCompnents.length; i++) {
+      mapCompnents[i].setAttribute('tabindex', '-1');
+    }
+  }
+}, 3000);

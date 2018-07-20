@@ -86,6 +86,7 @@ fillRestaurantHoursHTML = (operatingHours = self.restaurant.operating_hours) => 
     const time = document.createElement('td');
     time.innerHTML = operatingHours[key];
     row.appendChild(time);
+    row.setAttribute('tabindex', '0');
 
     hours.appendChild(row);
   }
@@ -123,6 +124,8 @@ fillReviewsHTML = (reviews = self.restaurant.reviews) => {
 createReviewHTML = (review) => {
   const li = document.createElement('li');
   const name = document.createElement('p');
+  name.setAttribute('tabindex', '0');
+  name.setAttribute('aria-label', `review by ${review.name}`);
   const nameDiv = document.createElement('div');
   const reviewHeadDiv = document.createElement('div');
 
@@ -139,6 +142,8 @@ createReviewHTML = (review) => {
   const dateDiv = document.createElement('div');
   dateDiv.className = 'date';
   dateDiv.appendChild(date);
+  dateDiv.setAttribute('tabindex', '0');
+  dateDiv.setAttribute('aria-label', review.date)
   reviewHeadDiv.appendChild(dateDiv);
   date.innerHTML = review.date;
   li.appendChild(reviewHeadDiv);
@@ -148,7 +153,8 @@ createReviewHTML = (review) => {
   const ratingDiv = document.createElement('div');
   ratingDiv.className = 'rate';
   ratingDiv.appendChild(rating);
-  rating.setAttribute('label-aria', 'Rating');
+  rating.setAttribute('aria-label', `Rating ${review.rating}`);
+  rating.setAttribute('tabindex', '0');
   li.appendChild(ratingDiv);
 
   const comments = document.createElement('p');
@@ -156,7 +162,9 @@ createReviewHTML = (review) => {
   const commentsDiv = document.createElement('div');
   commentsDiv.className = 'review-text';
   commentsDiv.appendChild(comments);
+  commentsDiv.setAttribute('tabindex', '0');
   li.appendChild(commentsDiv);
+  li.setAttribute('role', 'list-item');
 
   return li;
 };
