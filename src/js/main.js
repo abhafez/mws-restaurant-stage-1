@@ -4,10 +4,19 @@ let restaurants,
 var map;
 var markers = [];
 
+
+
 // Fetch neighborhoods and cuisines as soon as the page is loaded.
 document.addEventListener('DOMContentLoaded', (event) => {
   fetchNeighborhoods();
   fetchCuisines();
+  if (!navigator.serviceWorker) return;
+
+  navigator.serviceWorker.register('/sw.js').then(function () {
+    console.log('Registration worked!');
+  }).catch(function () {
+    console.log('Registration failed!');
+  });
 });
 
 // Fetch all neighborhoods and set their HTML.
@@ -38,7 +47,8 @@ fillNeighborhoodsHTML = (neighborhoods = self.neighborhoods) => {
 /**
  * Fetch all cuisines and set their HTML.
  */
-fetchCuisines = () => {3
+fetchCuisines = () => {
+  3
   DBHelper.fetchCuisines((error, cuisines) => {
     if (error) { // Got an error!
       console.error(error);
