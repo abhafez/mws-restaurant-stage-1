@@ -1,6 +1,14 @@
 let restaurant;
 var map;
+document.addEventListener('DOMContentLoaded', (event) => {
+  if (!navigator.serviceWorker) return;
 
+  navigator.serviceWorker.register('/sw.js').then(function () {
+    console.log('Registration worked!');
+  }).catch(function () {
+    console.log('Registration failed!');
+  });
+})
 // Initialize Google map, called from HTML
 window.initMap = () => {
   fetchRestaurantFromURL((error, restaurant) => {
